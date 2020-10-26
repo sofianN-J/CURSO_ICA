@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Repaso JS</title>
+</head>
+
+<body>
+    <h1>Repaso JS: ARRAYS</h1>
+    /* -P.O.O en JS, es un lenguaje basado en prototipos: <br> que son objetos que sirven de base para clonar nuevos objetos.<br> -EN JS NO HAY CLASES<br> -sus variables miembro(campos, atrb, propiedades...) y sus m�todos(funciones).<br> pueden ser creadas
+    en cualquier momento<br> -encapsulacion
+    <br> -herencia
+    <br> -polimorfismo
+    <br> */
+    <script type="text/javascript">
+        //lo mas parecido a clases en JS son los coontructores
+        //variable de clase o miembro 
+
+        function GestionUsuario() {
+            //como en java, usa this para el objeto
+            this.listaUsuarios = new Array();
+            this.listaUsuarios.push(10);
+            this.listaUsuarios.push(new Object());
+            this.listaUsuarios.push("texto cualquiera");
+            for (let i = 0; i < this.listaUsuarios.length; i++) {
+                document.write("<br> - " + gesUsu.listaUsuarios[i]);
+            }
+        }
+        let gesUsu = new GestionUsuario();
+    </script>
+</body>
+
+</html>

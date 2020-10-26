@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <ti>Intro JSa</ti>
+    </head>
+    <body>
+
+        <h1>Intro JS</h1>
+
+        <script>
+            //variable global. var = global//// let a nivel de bloque.
+            var mensajePrevio = "variable global";
+            document.write("<p>Bienvenidos a JS</p>");
+            console.log("Mensajes de desarrollo.");
+
+            function repetirMensaje(veces) {
+                 
+                for (var i = 0; i < veces; i++) {
+                     mensajeFun = "variable local";
+                    let texto = mensajeFun + " " + i;
+                    document.write("<p>" + texto + "</p>");
+                }
+                document.write(mensajeFun);
+            }
+            repetirMensaje(5);
+            document.write("<p>" + "fuera" + mensajeFun + "</p>");
+        </script>
+    </body>
+    </body>
+</html>
