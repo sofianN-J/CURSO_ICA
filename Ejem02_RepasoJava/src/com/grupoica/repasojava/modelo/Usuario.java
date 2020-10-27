@@ -1,72 +1,53 @@
 package com.grupoica.repasojava.modelo;
 
-//tipica clase de plain old java oject.(POJO)
-public class Usuario extends Object {
-	
-	
+/* T�pica clase Plain Old Java Object  POJO */
+public class Usuario /* extends Object*/ {
+
 	private String nombre;
 	private int edad;
 	
 	public Usuario() {
-		//constructor por defecto.
-		nombre = "Sin Nombre";
+		super();
+		nombre = "Sin nombre";
 	}
-	
-	//sobre carga de metodos
+	// Sobrecarga de constructores
 	public Usuario(String nombre, int edad) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
 	}
-	
-	//get and set --> click derecho/source/getter and setter.
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	public int getEdad() {
 		return edad;
 	}
-
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	// Con arroba empiezan las anotaciones, que son extras al c�digo
 
-	@Override /*estoo es una sobre escritura*/
+	@Override
 	public boolean equals(Object obj) {
 		Usuario usuario = (Usuario) obj;
 		return this.nombre == usuario.nombre 
 				&& this.edad == usuario.edad;
 	}
-	
-	//@Override ya no sirve ya que es una sobrecarga
+	// @Override Sobrecarga de m�todo (No override, no sobreescritura)
+	// Dos m�todos o constructores con el mismo nombre pero con 
+	// distina signatura (es decir, que los par�metros son distintos)
 	public boolean equals(Usuario usuario) {
-		
 		return this.nombre == usuario.nombre 
 				&& this.edad == usuario.edad;
 	}
-	
-	//con @ empizan las anotaciones
+	// OVERRIDE: Sobreescribir: Machacar el m�todo del padre
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Usuario" + nombre + "{" + edad + "}";
-	}
-	
-	
-	/*@OVERRIDE --> SOBREESCRIBIR: MACHACAR METODO DEL PADRE
-	 * 				SOBRECARGA: CUANDO TENEMOS 2 METODOS O CONSTRUCTORESCON EL MISMOS NOMBRE
-	 * PERO CON DISTINTOS PARAMETROS. 
-	 * 				
-	 * */
-	
-	
-	
-	
-	
+		return "Usuario " + nombre + " [" + edad + "]";
+	}	
 	
 }

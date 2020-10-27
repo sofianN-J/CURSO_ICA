@@ -3,28 +3,23 @@ package com.grupoica.repasojava;
 import com.grupoica.repasojava.modelo.GestionUsuarios;
 
 public class ProgramaMain {
-	
-	/*P.O.O
-	 La unidad básica de almacenamiento son los tipo primitivos y los
-	 objetos que estan basados en clases. Las clases son el molde, plantilla o estrucura que indica 
-	 cómo seran todos los objetosinstanciados a partir de ello: sus variables miembro(campos, atrb, propiedades...)
-	 y sus métodos(funciones).
-	 -encapsulacion: limitar la capacidad de las clases para limitar acceso a variables miembro y metodos.
-	 (nivel de acceso private, public , protected) --> privado a nivel de herencia,
-	 o por defecto que es a nivel proyecto
-	 -herencia: la capacidad para heredar los metodos y variables miembro unas de otras 
-	 usando la palabra extends.
-	 -polimorfismo
-	  */
-	
+
+	/* P.O.O.
+	 * La unidad bï¿½sica de almacenamiento son los tipos primitivos y los objetos
+	 * que estï¿½n basados en clases. Las clases son el molde, plantilla, estructura que indica
+	 * cï¿½mo serï¿½n todos los objetos instanciados a partir de ella:
+	 *  Sus variables miembro (campos, atributos, propiedades...) y sus mï¿½todos (funciones propias)
+	 *  - Encapsulaciï¿½n: Capacidad de las clases para limitar el acceso a variables miembro y mï¿½todos. (nivel de acceso private, public, protected (privado a nivel de herencia) o por defecto (a nivel de paquete)
+	 *  - Herencia: La capacidad de las clases para heredar los mï¿½todos y variables miembro unas de otras. Usando la palabra  'extends'
+	 *  - Polimorfismo
+	 */
+
 	public static void main(String[] args) {
-		
 		GestionUsuarios gesUsu = new GestionUsuarios();
-		
+		//gesUsu.add("dfdfdfdcfd");
 		gesUsu.listarUsuarios();
 		
-		EjemploMemoria e = new EjemploMemoria();
-		e.pruebaPasoPorValor();
+		EjemploMemoria.pruebaPasoPorValor();		
+		EjemploMemoria.pruebaPasoPorReferencia();		
 	}
-
 }
