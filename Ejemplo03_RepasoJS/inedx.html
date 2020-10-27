@@ -8,15 +8,18 @@
 
 <body>
     <h1>Repaso JS: ARRAYS</h1>
-    /* -P.O.O en JS, es un lenguaje basado en prototipos: <br> que son objetos que sirven de base para clonar nuevos objetos.<br> -EN JS NO HAY CLASES<br> -sus variables miembro(campos, atrb, propiedades...) y sus m�todos(funciones).<br> pueden ser creadas
-    en cualquier momento<br> -encapsulacion
-    <br> -herencia
-    <br> -polimorfismo
-    <br> */
+    <!-- -P.O.O en JS, es un lenguaje basado en prototipos: <br> que son objetos que sirven de base para clonar nuevos objetos.<br> -EN JS NO HAY CLASES<br> -sus variables miembro(campos, atrb, propiedades...) y sus m�todos(funciones).<br> pueden ser creadas
+    en cualquier momento<br>
+     -encapsulacion <br>
+     -herencia <br>
+   -polimorfismo<br>
+    -->
     <script type="text/javascript">
         //lo mas parecido a clases en JS son los coontructores
         //variable de clase o miembro 
 
+
+        //funcion que ejerce la funcion de constructora
         function GestionUsuario() {
             //como en java, usa this para el objeto
             this.listaUsuarios = new Array();
@@ -26,8 +29,13 @@
             for (let i = 0; i < this.listaUsuarios.length; i++) {
                 document.write("<br> - " + gesUsu.listaUsuarios[i]);
             }
+
+            this.listaUsuarios();
         }
+
         let gesUsu = new GestionUsuario();
+        gesUsu.listaUsuarios.push("ceecece");
+        gesUsu.listaUsuarios();
     </script>
 </body>
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>CREAR UN USUARIO</title>
+</head>
+
+<body>
+
+    <script>
+        //nombre global.
+        let nombreg = "sofiane";
+        let edadg = 20;
+        let edadg2 = 25;
+
+        //nombreP es local. 
+        function Usuario(nombreP, edadP, edadP2) {
+            //nombre miembro y edad miembro o de clase. 
+            this.nombre = nombreP;
+            this.edad = edadP;
+            this.age = edadP2;
+        }
+
+        var user1 = new Usuario(nombreg, edadg, edadg2);
+
+
+        document.write("El nombre del USER-1 Y SE EDAD" + user1.nombre + user1.edad + "<br>" + user1.age);
+    </script>
+
+</body>
+
+</html>
