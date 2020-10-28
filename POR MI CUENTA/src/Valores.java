@@ -3,9 +3,10 @@ import java.util.ArrayList;
 
 public class Valores{
     public static void main(String[] args) {
-        System.out.println("*****************************");
-        System.out.println("-EJERCICIOS DE VARIABLES-");
-        System.out.println("*****************************");
+    	
+        System.out.println("******************************************************");
+        System.out.println("-EJERCICIOS DE VARIABLES POR VALOR Y POR REFERENCIA-");
+        System.out.println("******************************************************");
 
         /*Crear dos variables de cualquiera de los tipos básicos,
         dar un valor a la primera y a continuación asigne la segunda a la primera.

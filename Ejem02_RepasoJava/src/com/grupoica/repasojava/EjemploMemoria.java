@@ -5,9 +5,11 @@ import com.grupoica.repasojava.modelo.Usuario;
 
 public class EjemploMemoria {
 
+	//variable estatica, para que sea accesible y global
+	static int xx = 10; 
 	public static void pruebaPasoPorValor() {
 		
-		int xx = 10; 
+		
 		boolean y = true; 
 		String z = "Texto al declarar";
 		funcionCualquiera(xx, y, z);
