@@ -24,7 +24,7 @@ public class GestionUsuarios {
 	}	
 	
 	public void listarUsuarios() {
-		
+		System.out.println("mostramos usuarios");
 		for (int i = 0; i < this.listaUsuarios.size(); i++) {
 			System.out.println(this.listaUsuarios.get(i));
 		}
@@ -67,7 +67,6 @@ public class GestionUsuarios {
 			}
 			System.out.println(tres.getNombre());
 		}
-		
 	}
 	
 	//modificar edad
@@ -107,6 +106,18 @@ public class GestionUsuarios {
 			}
 			
 		}
+	}
+	
+	public void filtrarUsuario(int edadMin,  int edadMax) {
+		
+		for(Usuario usu : listaUsuarios) {
+			if(usu.getEdad() >= edadMin && usu.getEdad() <= edadMax) {
+				System.out.println("usuario encontrado: " + usu.toString());
+			}else {
+				System.out.println("Usuarios por edad no encontrados");
+			}
+		}
+		
 	}
 	
 	

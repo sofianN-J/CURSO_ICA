@@ -21,7 +21,7 @@ public class ProgramaMain {
 	public static void main(String[] args) {
 		GestionUsuarios gesUsu = new GestionUsuarios();
 	
-		gesUsu.add(new Usuario());
+		
 		Usuario usu = new Usuario();
 		
 		Usuario tres = new Usuario();
@@ -29,12 +29,14 @@ public class ProgramaMain {
 		tres.setNombre("Ricardo");
 		tres.setEdad(27);
 		//xxxxxxxxxxxxxxxxx
+		
 		gesUsu.add(tres);
 		gesUsu.modificarNombreUsuario("Ricardo");
 		gesUsu.modificarEdadUsuario( 27, "ABDUL");
 		gesUsu.mostrarEdad(tres.getEdad());
 		gesUsu.filtrarEdad();
-		gesUsu.eliminarUsuario("joker");	
+		gesUsu.filtrarUsuario(20, 29);
+		//gesUsu.eliminarUsuario("joker");	
 		
 		//aniadir usuario
 		
