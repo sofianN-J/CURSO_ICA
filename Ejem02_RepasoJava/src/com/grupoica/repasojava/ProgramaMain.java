@@ -36,6 +36,7 @@ public class ProgramaMain {
 		gesUsu.mostrarEdad(tres.getEdad());
 		gesUsu.filtrarEdad();
 		gesUsu.filtrarUsuario(0, 0);
+		gesUsu.filtrarUsuario(20, 27);
 		//gesUsu.eliminarUsuario("joker");	
 		
 		//aniadir usuario
