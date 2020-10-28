@@ -21,17 +21,6 @@ public class GestionUsuarios {
 		this.listaUsuarios = new ArrayList();
 		
 		
-		
-		//listarUsuarios();
-		modificarNombreUsuario();
-		modificarEdadUsuario();
-		mostrarEdad();
-		filtrarEdad();
-		eliminarUsuario("joker");	
-		
-		
-		
-		
 	}	
 	
 	public void listarUsuarios() {
@@ -69,7 +58,7 @@ public class GestionUsuarios {
 	
 	
 	//modificar usuario
-	public void modificarNombreUsuario() {
+	public void modificarNombreUsuario(String nombre) {
 		
 		for (Usuario tres : listaUsuarios) {
 			if(tres.getNombre().equalsIgnoreCase("Ricardo")) {
@@ -82,23 +71,23 @@ public class GestionUsuarios {
 	}
 	
 	//modificar edad
-	public void modificarEdadUsuario() {
+	public void modificarEdadUsuario(int edad, String nombreBusqueda) {
 		
 		for (Usuario tres : listaUsuarios) {
-			if(tres.getEdad() == 27) {
+			if(tres.getNombre().equals(nombreBusqueda)) {
 				System.out.println("cambiaremos la edad");
-				tres.setEdad(30);
+				tres.setEdad(edad);
 			}
-			System.out.println(tres.getEdad());
+			System.out.println("La nueva edad es: " + tres.getEdad());
 		}
 		
 	}
 	
 	
 	//visualizamos los usuarios
-		public void mostrarEdad() {
+		public void mostrarEdad(int edad) {
 			for (Usuario tres : listaUsuarios) {
-				if(tres.getEdad() < 27) {
+				if(tres.getEdad() == 27) {
 					System.out.println("No podras acceder " + tres.getEdad());
 					
 				}else {

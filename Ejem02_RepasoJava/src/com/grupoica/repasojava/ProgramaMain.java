@@ -25,8 +25,16 @@ public class ProgramaMain {
 		Usuario usu = new Usuario();
 		
 		Usuario tres = new Usuario();
+		
 		tres.setNombre("Ricardo");
 		tres.setEdad(27);
+		//xxxxxxxxxxxxxxxxx
+		gesUsu.add(tres);
+		gesUsu.modificarNombreUsuario("Ricardo");
+		gesUsu.modificarEdadUsuario( 27, "ABDUL");
+		gesUsu.mostrarEdad(tres.getEdad());
+		gesUsu.filtrarEdad();
+		gesUsu.eliminarUsuario("joker");	
 		
 		//aniadir usuario
 		
@@ -44,34 +52,34 @@ public class ProgramaMain {
 		
 		usu.setEdad(30);
 		usu.setNombre("Fulanito Mengano");
-		System.out.println("Nombre: " + usu.getNombre());
+		//System.out.println("Nombre: " + usu.getNombre());
 		//si listausuarios es arraylist sin tipo, es que su tipo es Object. por lo tanto hacemos 
 //		casting implicito  de casting a object gracias al polimorfismo
 		//this.listaUsuarios.add(usu); 
 		
 		
-		System.out.println("Edad u2: " + u2.getEdad());
+		//System.out.println("Edad u2: " + u2.getEdad());
 		
 		//this.listaUsuarios.add("Texto");
 		//this.listaUsuarios.add(new Object());
 		//this.listarUsuarios();
 		
 		if (u2.equals(usu)) {
-			System.out.println("Son iguales");
+			//System.out.println("Son iguales");
 		} else {
-			System.out.println("Son distintos");
+			//System.out.println("Son distintos");
 		}
 		
 		Loco joker = new Loco();
 		joker.setNombre("Joker");
 		joker.setTipoLocura(true);
 		if (joker.isTipoLocura()) {
-			System.out.println("joker esta loco " + joker.toString());
+			//System.out.println("joker esta loco " + joker.toString());
 		}else {
-			System.out.println("joker no esta loco " + joker.toString());
+			//System.out.println("joker no esta loco " + joker.toString());
 		}
 		
-		System.out.println("Joker: " + joker.toString());
+		//System.out.println("Joker: " + joker.toString());
 		//this.listaUsuarios.add(joker);
 		//this.mostrarUsuario("joker");
 		
