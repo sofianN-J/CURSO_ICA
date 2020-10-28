@@ -120,6 +120,12 @@ public class GestionUsuarios {
 		
 	}
 	
+public void filtrarUsuario(int edad) {
+	filtrarUsuario(edad,edad);
+		
+		
+	}
+	
 	
 	//EJERCICIOS.
 	// Ejercicios:
