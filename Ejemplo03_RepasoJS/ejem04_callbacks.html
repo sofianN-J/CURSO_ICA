@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+
+<body>
+
+    <script>
+        function sumar(x, y) {
+            return x + y;
+        }
+        var restar = function(x, y) {
+            return x - y;
+        }
+        var multiplicar = new Function("x", "y", "{ return x * y; }");
+
+        function sumarArrays(arr_1, arr_2) {
+            let arraySuma = [];
+            for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
+                arraySuma[i] = arr_1[i] + arr_2[i];
+            }
+            return arraySuma;
+        }
+        // eval () no se debe usar, o usar con cuidado
+        function operarArraysEval(arr_1, arr_2, simbolo) {
+            let arrayRes = [];
+            for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
+                arrayRes[i] = eval("" + arr_1[i] + simbolo + arr_2[i]);
+            }
+            return arrayRes;
+        }
+
+        // switch () se puede complicar fácilmente, y a veces acceso a ese código
+        function operarArraysSwitch(arr_1, arr_2, simbolo) {
+            let arrayRes = [];
+            for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
+                switch (simbolo) {
+                    case "+":
+                        arrayRes[i] = arr_1[i] + arr_2[i];
+                        break;
+                    case "-":
+                        arrayRes[i] = arr_1[i] + arr_2[i];
+                        break;
+                }
+            }
+            return arrayRes;
+        }
+
+        // Mejor con funciones callback, o de retro-llamada, que significa que le pasamos una función como parámetro, y dentro de nuestra función se invoca a esta función callback
+        function operarArrays(arr_1, arr_2, funcionCallback) {
+            let arrayRes = [];
+            for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
+                arrayRes[i] = funcionCallback(arr_1[i], arr_2[i]);
+            }
+            return arrayRes;
+        }
+
+        let arrResult = sumarArrays([2, 3, 4], [10, 15, 20]);
+        let arrResta = operarArraysEval([2, 3, 4], [10, 15, 20], "%");
+        console.log(`Suma: ${arrResult} `);
+        console.log(`Resta: ${arrResta} `);
+        console.log(`Empezamos a usar callbacks `);
+        let arrMult = operarArrays([2, 3, 4], [10, 15, 20], multiplicar);
+        console.log(`Resta: ${arrMult} `);
+    </script>
+</body>
+
+</html>

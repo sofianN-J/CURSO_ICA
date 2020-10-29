@@ -1,14 +1,12 @@
 package com.grupoica.repasojava.interfaces;
 
 public class Caballo extends Vehiculo implements Animal {
-	
-	private int dientes;
+
+	int dientes;
 	public Caballo(String marca, float peso, int dientes) {
 		super(marca, peso);
 		this.dientes = dientes;
-		
 	}
-	
 	public int getDientes() {
 		return dientes;
 	}
@@ -16,26 +14,22 @@ public class Caballo extends Vehiculo implements Animal {
 		this.dientes = dientes;
 	}
 
-		
 	@Override
 	public void aceleracion() {
-		System.out.println("dale caballito " 
-							+ marca);
+		
+		//super.aceleracion();
+		System.out.println(marca + " - corre caballito! ");
 	}
-
 	@Override
 	public void desplazarse(float distancia) {
-		System.out.println(marca + " galopa a tope " + distancia + " metros ");
-		
+		System.out.println(marca + " galopa " + distancia + " metros");
 	}
-
 	@Override
 	public void alimentarse(String comida) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-	
-
+		if (comida.contains("calabacin")) {
+			System.out.println("Come sano " + comida );
+		} else {
+			System.out.println("Hi hi hi quiero calabacines! no quiero " + comida );
+		}
+	}	
 }

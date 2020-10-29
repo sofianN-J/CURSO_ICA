@@ -1,9 +1,8 @@
 package com.grupoica.repasojava.interfaces;
 
-
-//si no queremos que sea posible instanciar una clase,
-//la declaramos abstracta 
+// Si no queremos que sea posible instanciar una clase, la declaramos abstracta
 public abstract class Vehiculo {
+
 	protected String marca;
 	protected float peso;
 	
@@ -12,33 +11,22 @@ public abstract class Vehiculo {
 		this.marca = marca;
 		this.peso = peso;
 	}
-	
-
 	public String getMarca() {
 		return marca;
 	}
-
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-
 	public float getPeso() {
 		return peso;
 	}
-
 	public void setPeso(float peso) {
 		this.peso = peso;
 	}
 	
 	public void aceleracion() {
-		System.out.println(getClass().getSimpleName() +
-				" " + marca + "Acelereando...");
+		System.out.println(getClass().getSimpleName() + " " 
+				+ marca + " Acelerando...");
 	}
-	
-	//metodo abstarcto implica que una clase sea absracta
 	public abstract void desplazarse(float distancia);
-	
-	
-	
-	
 }

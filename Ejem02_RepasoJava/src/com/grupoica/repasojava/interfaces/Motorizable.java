@@ -1,7 +1,6 @@
 package com.grupoica.repasojava.interfaces;
 
 public interface Motorizable {
-	//moetodos abstactos
-	void  encender();
-	
+	// M�todos abstractos:
+	void encender();
 }
