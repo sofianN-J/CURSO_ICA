@@ -1,6 +1,6 @@
 package com.grupoica.repasojava.interfaces;
 
-public class Patinete extends Vehiculo implements Motorizable {
+public class Patinete extends Vehiculo  {
 	
 	String rueda;
 	
@@ -22,11 +22,7 @@ public class Patinete extends Vehiculo implements Motorizable {
 	}
 	
 	
-	@Override
-	public void encender() {
-		
-		
-	}
+
 
 
 	@Override

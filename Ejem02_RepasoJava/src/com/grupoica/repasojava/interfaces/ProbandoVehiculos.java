@@ -63,6 +63,16 @@ public class ProbandoVehiculos {
 	 * 2 - Crear clase Patinete que sea motorizable, pero no vehículo
 	 * 3 - Guarderemos un patinete en el garaje 
 	 * */
+	
+	/* Ejercicios: 
+	 
+	 * 4 - Hacer una clase Perro (que tampoco es un vehículo)
+	 * 5 - Crear una interfaz Animal con metodo 
+	 * 			alimentarse(String comida)
+	 * 6 - Perro y Caballo que sean animales, y hacer una granja
+	 * 		y alimentarlos.
+	 * */
+
 
 	
 	
