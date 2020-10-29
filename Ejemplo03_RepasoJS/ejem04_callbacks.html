@@ -9,6 +9,20 @@
 
 <body>
 
+    <input type="button" value="haz click 1" onclick="muestraMensaje()">
+    <input id="btn_2" type="button" value="haz click 2">
+    <input id="btn_3" type="button" value="haz click 3">
+
+    <script>
+        var muestraMensaje = function() {
+            alert("mensaje 1 mostrado ");
+        }
+        document.getElementById("btn_2").onclick = () => alert("Msj 2 ");
+        let btn_3 = document.getElementsByTagName("input")[2];
+        btn_3.addEventListener("click", () => alert("boton 3"));
+    </script>
+
+
     <script>
         function sumar(x, y) {
             return x + y;
@@ -16,7 +30,7 @@
         var restar = function(x, y) {
             return x - y;
         }
-        var multiplicar = new Function("x", "y", "{ return x * y; }");
+        var multiplicar = new Function("x ", "y ", "{ return x * y; } ");
 
         function sumarArrays(arr_1, arr_2) {
             let arraySuma = [];
@@ -29,7 +43,7 @@
         function operarArraysEval(arr_1, arr_2, simbolo) {
             let arrayRes = [];
             for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
-                arrayRes[i] = eval("" + arr_1[i] + simbolo + arr_2[i]);
+                arrayRes[i] = eval(" " + arr_1[i] + simbolo + arr_2[i]);
             }
             return arrayRes;
         }
@@ -39,10 +53,10 @@
             let arrayRes = [];
             for (let i = 0; i < arr_1.length && i < arr_2.length; i++) {
                 switch (simbolo) {
-                    case "+":
+                    case "+ ":
                         arrayRes[i] = arr_1[i] + arr_2[i];
                         break;
-                    case "-":
+                    case "- ":
                         arrayRes[i] = arr_1[i] + arr_2[i];
                         break;
                 }
@@ -60,7 +74,7 @@
         }
 
         let arrResult = sumarArrays([2, 3, 4], [10, 15, 20]);
-        let arrResta = operarArraysEval([2, 3, 4], [10, 15, 20], "%");
+        let arrResta = operarArraysEval([2, 3, 4], [10, 15, 20], "% ");
         console.log(`Suma: ${arrResult} `);
         console.log(`Resta: ${arrResta} `);
         console.log(`Empezamos a usar callbacks `);
@@ -85,16 +99,15 @@
 
         /*
         //2-aumento en porcentaje:
-        let arrDivisionPorcentaje = operarArrays([
-            [10, 15, 20, 33], [2, 3, 4, 2],
-            function(x, y) {
-                for(let i = 0;i <=  x.length;i++){
-                    for()
-                }
-                return x % y;
-        ]);
+            consolo.log(`porcentaje: ${operarArrays}` )
         */
+        /*
+         console.log(`${operarArrays(
+             [10, 15, 20, 33], [2, 3, 4, 2],
+             (x, y) => x + x * y / 100}`);
+             */
     </script>
+
 </body>
 
 </html>

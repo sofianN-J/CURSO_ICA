@@ -8,7 +8,8 @@ import com.grupoica.repasojava.modelo.Usuario;
 
 public class ProgramaMain {
 	public static final float PI = 3.1415927f;
-
+	
+	
 	/* P.O.O.
 	 * La unidad b�sica de almacenamiento son los tipos primitivos y los objetos
 	 * que est�n basados en clases. Las clases son el molde, plantilla, estructura que indica
@@ -110,6 +111,8 @@ public class ProgramaMain {
 		
 		ProbandoVehiculos.probar();
 		ProbandoVehiculos.granja();
+		
+		EjemploLambas.ejecutarLambdas();
 		
 	}
 }
