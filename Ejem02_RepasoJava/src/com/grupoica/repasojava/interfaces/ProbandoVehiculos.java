@@ -63,6 +63,10 @@ public class ProbandoVehiculos {
 		ArrayList<Animales> misAnimales = new ArrayList<>();
 		Caballo miCaballo = new Caballo("Sofianearabe", 500, 40);
 		miCaballo.alimentarse("pienso");
+		//para perro
+		
+		Perro miPerro = new Perro("pienso");
+		miPerro.alimentarse("pienso");
 	}
 	/* Ejercicios: 
 	 * 1 - Garaje será solo para objetos motorizables.

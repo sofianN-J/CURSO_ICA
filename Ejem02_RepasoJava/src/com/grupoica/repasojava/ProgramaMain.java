@@ -109,7 +109,7 @@ public class ProgramaMain {
 		*/
 		
 		ProbandoVehiculos.probar();
-		
+		ProbandoVehiculos.granja();
 		
 	}
 }
