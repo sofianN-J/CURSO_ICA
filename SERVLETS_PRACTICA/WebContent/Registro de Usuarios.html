@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- en action ponemos el nombre del servlet(CLASE)
+		como sabemos puede ser el metodo get o post
+		el get-> enviamos los datos por la URL(VALORES LIMITADOS HASTA 200)
+		por un modelo de (clave/valor).
+		Por otro lado tenemos el metodo POST-> VIAJA DE MANERA ENCAPSULADA
+		Y NO SE PUEDE VER EN LA URL(MUY BUENO PARA ENVIAR ARCHIVS ADJUNTOS) -->
+											<!-- get o post -->
+	<form action="RegistroUsuarios" method="post">
+	<!-- MUY IMPORTANTE EL VALOR DE NAME YA QUE ES CON LO QUE TRABAJARMOS
+				EN EL SERVLET -->
+		Nombre:<input type="text" name="nombre">
+		<br><br>
+		Apellido:<input type="text" name="apellido">
+		<br><br>
+		<input type="submit" value="ENVIAR">
+	
+	</form>
+</body>
+</html>
