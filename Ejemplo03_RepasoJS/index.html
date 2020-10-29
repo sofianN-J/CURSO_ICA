@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Repaso JS</title>
+</head>
+
+<body>
+    <h1>Repaso JS: Arrays</h1>
+
+    P.O.O. en JS - En JS NO HAY CLASES. Es un lenguaje basado en prototipos: <br> Que son objetos que sirven de base para clonar nuevos objetos. <br> - Sus variables miembro (campos, atributos, propiedades...) y sus métodos (funciones propias). <br> pueden
+    ser creadas en CUALQUIER MOMENTO.
+    <br/> * Encapsulación: NO hay priori. Para eso tenemos quer usar clousures
+    <br/> * Herencia
+    <br/> * Polimorfismo
+    <br>
+    <h2>Texto de JS:</h2>
+    <a href="ejem02_ES6.html">Ir a Ecma Script 6</a>
+    <script type="text/javascript">
+        function Usuario(nombreP, edadP) {
+            this.nombre = nombreP;
+            // Variable local que "clausuramos" en un método
+            var edad = edadP;
+            this.getEdad = function() {
+                // Clousure porque usamos una variable local externa a la función
+                // que para poder devolverla JS hace que persista en el tiempo
+                return edad;
+            }
+        }
+        /* Lo más parecido a clases en JS son los constructores: */
+        function GestionUsuario() {
+            // Como en Java, usa this para el objeto recién creado
+
+            this.listaUsuarios = new Array();
+            this.listaUsuarios.push(10);
+            let usu = new Usuario();
+            usu.edad = 30;
+            usu.nombre = "Fulanito Mengano";
+            document.write("<br>Nombre: " + usu.nombre + ", " + usu.edad);
+            this.listaUsuarios.push(usu);
+            this.listaUsuarios.push("Texto cualquiera");
+            let u2 = new Usuario("U2", 50);
+            document.write("<br>Edad u2: " + u2.getEdad());
+        }
+        // Parecido a un método de clase, en realidad es un método del prototipo 
+        GestionUsuario.prototype.listarUsuarios = function() {
+            for (let i = 0; i < this.listaUsuarios.length; i++) {
+                document.write("<br> - " + this.listaUsuarios[i]);
+            }
+        }
+        let gesUsu = new GestionUsuario();
+
+        gesUsu.listaUsuarios.push("lkjdjsflkdf");
+        gesUsu.listarUsuarios();
+    </script>
+</body>
+
+</html>

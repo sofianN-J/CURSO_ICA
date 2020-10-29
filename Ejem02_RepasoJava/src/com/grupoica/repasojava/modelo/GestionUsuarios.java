@@ -20,7 +20,6 @@ public class GestionUsuarios {
 		super();
 		this.listaUsuarios = new ArrayList();
 		
-		
 	}	
 	
 	public void listarUsuarios() {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Comentario XML/HTML -->
+
+    <script>
+        function sumar(x, y) {
+            return x + y;
+        }
+        sumar.propiedadLoca = 200;
+
+        var restar = function(x, y) {
+            return x - y;
+        }
+        var multiplicar = new Function("x", "y", "{ return x * y; }");
+        multiplicar.propiedadLoca = 300;
+
+        document.write("Suma : 5 + 3 = " + sumar(5, 3));
+        document.write("<br>Resta : 5 - 3 = " + restar(5, 3));
+        document.write("<br>Mult : 5 * 3 = " + multiplicar(5, 3));
+        document.write("<br>Locura:" + multiplicar.propiedadLoca);
+        document.write("<br>Locura 2:" + sumar.propiedadLoca);
+        /* Eo*/
+        // Por supuesto
+        var codigoFun = prompt("¿Qué quieres que haga?");
+        let funUsu = new Function(codigoFun);
+        funUsu();
+    </script>
+</body>
+
+</html>

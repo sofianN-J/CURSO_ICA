@@ -21,7 +21,7 @@ public class ProgramaMain {
 	public static void main(String[] args) {
 		GestionUsuarios gesUsu = new GestionUsuarios();
 	
-		
+		EjemploHashMap.probandoHashMap();
 		Usuario usu = new Usuario();
 		
 		Usuario tres = new Usuario();
@@ -31,12 +31,16 @@ public class ProgramaMain {
 		//xxxxxxxxxxxxxxxxx
 		
 		gesUsu.add(tres);
+		gesUsu.add(new Usuario("sofia", 2));
+		gesUsu.add(new Usuario("germa", 5));
+		
+		
 		gesUsu.modificarNombreUsuario("Ricardo");
 		gesUsu.modificarEdadUsuario( 27, "ABDUL");
 		gesUsu.mostrarEdad(tres.getEdad());
 		gesUsu.filtrarEdad();
-		gesUsu.filtrarUsuario(0, 0);
-		gesUsu.filtrarUsuario(20, 27);
+		gesUsu.filtrarUsuario(27);
+		//gesUsu.filtrarUsuario(20, 27);
 		//gesUsu.eliminarUsuario("joker");	
 		
 		//aniadir usuario
