@@ -66,6 +66,22 @@
         console.log(`Empezamos a usar callbacks `);
         let arrMult = operarArrays([2, 3, 4], [10, 15, 20], multiplicar);
         console.log(`Resta: ${arrMult} `);
+
+        //dividir
+        let arrDiv = operarArrays(
+            [10, 15, 20, 44], [2, 3, 4, 2],
+            function(x, y) {
+                return x / y;
+            });
+        console.log(`Division: ${arrDiv} `);
+
+        //operacion de resto de la div entera sobre arrays: %
+        let arrDivModulo = operarArrays(
+            [10, 15, 20, 33], [2, 3, 4, 2],
+            function(x, y) {
+                return x % y;
+            });
+        console.log(`El resto Division: ${arrDivModulo} `);
     </script>
 </body>
 
