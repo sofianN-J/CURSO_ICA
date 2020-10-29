@@ -32,6 +32,17 @@
         var codigoFun = prompt("¿Qué quieres que haga?");
         let funUsu = new Function(codigoFun);
         funUsu();
+
+
+        //funciones lamda
+        var dividir = (a, b) => {
+            return a / b;
+        }
+
+        var resto = (a, b) => a % b;
+
+        document.write("<br>division :" + dividir.propiedadLoca);
+        document.write("<br>division :" + resto.propiedadLoca);
     </script>
 </body>
 
