@@ -58,6 +58,12 @@ public class ProbandoVehiculos {
 		
 		
 	}
+	
+	public static void granja() {
+		ArrayList<Animales> misAnimales = new ArrayList<>();
+		Caballo miCaballo = new Caballo("Sofianearabe", 500, 40);
+		miCaballo.alimentarse("pienso");
+	}
 	/* Ejercicios: 
 	 * 1 - Garaje será solo para objetos motorizables.
 	 * 2 - Crear clase Patinete que sea motorizable, pero no vehículo

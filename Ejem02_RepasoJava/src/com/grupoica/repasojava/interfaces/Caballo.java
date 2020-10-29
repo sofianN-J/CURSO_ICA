@@ -1,6 +1,6 @@
 package com.grupoica.repasojava.interfaces;
 
-public class Caballo extends Vehiculo {
+public class Caballo extends Vehiculo implements Animal {
 	
 	private int dientes;
 	public Caballo(String marca, float peso, int dientes) {
@@ -26,6 +26,12 @@ public class Caballo extends Vehiculo {
 	@Override
 	public void desplazarse(float distancia) {
 		System.out.println(marca + " galopa a tope " + distancia + " metros ");
+		
+	}
+
+	@Override
+	public void alimentarse(String comida) {
+		// TODO Auto-generated method stub
 		
 	}
 	
