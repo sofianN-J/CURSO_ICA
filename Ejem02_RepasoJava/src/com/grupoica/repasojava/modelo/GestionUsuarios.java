@@ -2,140 +2,113 @@ package com.grupoica.repasojava.modelo;
 
 import java.util.ArrayList;
 
-import com.grupoica.repasojava.ProgramaMain;
+import com.grupoica.repasojava.EjemploHashMap;
 
 /* Clase que se encar� de las operaciones C.R.U.D.
  * Create Read Update Delete (Op. Alta, baja, modificaci�n y consulta)
- * */ 
+ * */
 public class GestionUsuarios {
-	
-	//objeto en su  forma ambigua(todos los elementos son object)
-	//private ArrayList listaUsuarios;
-	//lista  en su forma generica (todos los elementos son del mismo tipo o heredero)
+
+	// lista en su forma ambigua (todos los elementos son object)
+	// private ArrayList listaUsuarios; es lo mismo ArrayList<Object>
+	// lista es su forma gen�rica
+	// (todos lso elemenos son del mismo o de alg�n tipo heredero)
 	private ArrayList<Usuario> listaUsuarios;
-	
-	
-	
+
 	public GestionUsuarios() {
 		super();
 		this.listaUsuarios = new ArrayList();
-		
-	}	
-	
+	}
+
 	public void listarUsuarios() {
-		System.out.println("mostramos usuarios");
 		for (int i = 0; i < this.listaUsuarios.size(); i++) {
 			System.out.println(this.listaUsuarios.get(i));
 		}
 	}
-	//listar usuario por nombre
+
 	public void mostrarUsuario(String nombre) {
-		
+
 		for (Usuario usu : listaUsuarios) {
-				//casting conversion de un tipo de dato en otro gracias al polimorfismo
-				if (usu.getNombre().equals(nombre)) {
-					System.out.println("ENCONTRADO:  " + usu.getNombre());
-				}
+			// if (usuObj instanceof Usuario) {
+			// Casting de objetos gracias al poliformismo
+			// Usuario usu = (Usuario) usuObj;
+			if (usu.getNombre().equalsIgnoreCase(nombre)) {
+				System.out.println("ENCONTRADO: " + usu.getNombre());
+			}
+			// }
 		}
 	}
-	
+
+	public Usuario obtenerUsuario(String nombre) {
+
+		for (Usuario usu : listaUsuarios) {
+			if (usu.getNombre().equalsIgnoreCase(nombre)) {
+				return usu;
+			}
+		}
+		System.out.println("Usuario no encontrado: " + nombre);	
+		return null;
+	}
+
+	public void eliminarUsuario(String nombre) {
+
+		Usuario usuBorrar = obtenerUsuario(nombre);
+		listaUsuarios.remove(usuBorrar);	
+		/*for (Usuario usu : listaUsuarios) {
+			if (usu.getNombre().equalsIgnoreCase(nombre)) {
+				System.out.println("Usuario eliminado: " + nombre);
+				listaUsuarios.remove(usu);
+				return;
+			}
+		}*/
+	}
+	public void eliminarTodos() {
+		listaUsuarios.clear();
+	}
+
 	public void add(Usuario usu) {
 		this.listaUsuarios.add(usu);
+		EjemploHashMap.diccUsuarios.put(usu.getNombre(), usu);
 	}
-	
-	public void eliminarUsuario(String nombre) {
-		for (Usuario usu : listaUsuarios) {
+	public void add(String nombre, int edad) {	
+		Usuario nuevoUsu = new Usuario(nombre, edad);
+		this.listaUsuarios.add(nuevoUsu);
+		EjemploHashMap.diccUsuarios.put(nuevoUsu.getNombre(), nuevoUsu);
+	}
+	public void modificar(String nombre,
+			String nuevoNombre, int nuevaEdad) {		
 
-			//casting conversion de un tipo de dato en otro gracias al polimorfismo
-			if (usu.getNombre().equalsIgnoreCase(nombre)) {
-				System.out.println("usuario eliminado :  " + nombre);
-				listaUsuarios.remove(usu);
-				break;
-			}
-	}
-	}
-	
-	
-	//modificar usuario
-	public void modificarNombreUsuario(String nombre) {
-		
-		for (Usuario tres : listaUsuarios) {
-			if(tres.getNombre().equalsIgnoreCase("Ricardo")) {
-				System.out.println("cambiaremos el nombre");
-				tres.setNombre("ABDUL");
-			}
-			System.out.println(tres.getNombre());
+		Usuario usuModif = obtenerUsuario(nombre);
+		if (usuModif != null) {
+			usuModif.setEdad(nuevaEdad);
+			usuModif.setNombre(nuevoNombre);
 		}
 	}
-	
-	//modificar edad
-	public void modificarEdadUsuario(int edad, String nombreBusqueda) {
-		
-		for (Usuario tres : listaUsuarios) {
-			if(tres.getNombre().equals(nombreBusqueda)) {
-				System.out.println("cambiaremos la edad");
-				tres.setEdad(edad);
-			}
-			System.out.println("La nueva edad es: " + tres.getEdad());
-		}
-		
+	public void modificar(String nombre, String nuevoNombre) {
+		Usuario usuModif = obtenerUsuario(nombre);
+		if (usuModif != null) 
+			usuModif.setNombre(nuevoNombre);
 	}
-	
-	
-	//visualizamos los usuarios
-		public void mostrarEdad(int edad) {
-			for (Usuario tres : listaUsuarios) {
-				if(tres.getEdad() == 27) {
-					System.out.println("No podras acceder " + tres.getEdad());
-					
-				}else {
-					System.out.println("puedes acceder");
-				}
-				
-			}
-		}
-	//filtramos usuario por edad
-	public void filtrarEdad() {
-		for (Usuario tres : listaUsuarios) {
-			if(tres.getEdad() < 27) {
-				System.out.println("No podras acceder");
-				
-			}else {
-				System.out.println("puedes acceder");
-			}
-			
-		}
+	public void modificar(String nombre, int nuevaEdad) {
+		Usuario usuModif = obtenerUsuario(nombre);
+		if (usuModif != null) 
+			usuModif.setEdad(nuevaEdad);
 	}
-	
-	public void filtrarUsuario(int edadMin,  int edadMax) {
-		
-		for(Usuario usu : listaUsuarios) {
-			if(usu.getEdad() >= edadMin && usu.getEdad() <= edadMax) {
-				System.out.println("usuario encontrado: " + usu.toString());
-			}else {
-				System.out.println("Usuarios por edad no encontrados");
-			}
-		}
-		
-	}
-	
-public void filtrarUsuario(int edad) {
-	filtrarUsuario(edad,edad);
-		
-		
-	}
-	
-	
-	//EJERCICIOS.
-	// Ejercicios:
-			// 1 -  Traer los eemplos del constructor GestionUsuarios a main
-			// 2 - Modificar usuario
-			// 3 - Método eliminar todos los usuarios
-			// 4 - Filtrar usuarios por edad (motrar todos los que tengan cierta edad)
-			// 5 - Filtrar usuarios por edad (los que estén en un rango de edad)
-	
+	public void filtrarUsuario(int edadMin, int edadMax) {
 
-	
-	
-
+		boolean encontrado = false;			
+		
+		for (Usuario usu : listaUsuarios) 
+			if (usu.getEdad() >= edadMin && usu.getEdad() <= edadMax) {
+				encontrado = true;
+				System.out.println("Usuario encontrado: " + usu.toString());
+			}
+		
+		if (! encontrado)
+			System.out.println("Usuarios por edad no encontrados: ");
+	}
+	public void filtrarUsuario(int edad) {
+		filtrarUsuario(edad, edad);
+	}
 }
+

@@ -3,8 +3,8 @@ package com.grupoica.repasojava.modelo;
 /* T�pica clase Plain Old Java Object  POJO */
 public class Usuario /* extends Object*/ {
 
-	private String nombre;
-	private int edad;
+	protected String nombre;
+	protected int edad;
 	
 	public Usuario() {
 		super();
