@@ -57,9 +57,9 @@ public class HolaServlet extends HttpServlet {
 			int iTest = Integer.valueOf(a);
 			//int j = iTest;
 			for(int i = 0; i <= iTest ; i++ ) {
-				while(iTest > 0) {
-					salidaInfo.println(" - " + iTest++  + " pos "+ i++);
-				}
+			
+				salidaInfo.println(" -" + i + " " + iTest++  + " pos "+ i++);
+				
 			}
 		}
 		
