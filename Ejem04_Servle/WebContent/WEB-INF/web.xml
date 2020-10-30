@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <!-- le indicamos al tomcat que existe  -->
+  <servlet>
+  	<servlet-name>HolaS</servlet-name>
+  	<servlet-class>com.grupoica.servlets.HolaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HolaS</servlet-name>
+  	<url-pattern>/hola.do</url-pattern>
+  </servlet-mapping>
+ 
 </web-app>
